@@ -230,7 +230,7 @@ ZMK_LAYER(base,
     X_LH                                               &lt NAV SPC   &kp TAB         X_MH     &kp ENTER     &kp BSPC                                                  X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 , 
-sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+<&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 )
 
 ZMK_LAYER(nav,
