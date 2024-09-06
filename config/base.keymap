@@ -128,13 +128,6 @@ ZMK_TRI_STATE(swapper,
     ignored-key-positions = <LT2>;
 )
 
-// Sticky layer + sticky shift (workaround for issue #1421)
-ZMK_STICKY_KEY(sls,
-    release-after-ms = <1000>;
-    bindings = <&uc_shift>;
-    ignore-modifiers;
-)
-
 // reuse basic mod-morph scheme
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
     ZMK_MOD_MORPH(NAME, \
