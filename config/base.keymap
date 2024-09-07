@@ -7,10 +7,10 @@
 #else
     #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #include "zmk-helpers/helper.h"
-#include "zmk-helpers/unicode-chars/greek.dtsi"
-#include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
 #define FN 1
