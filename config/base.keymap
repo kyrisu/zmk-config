@@ -66,6 +66,13 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <175>;
+    quick-tap-ms = <125>;
+    bindings = <&kp>, <&kp>;
+)
+
 /* Nav cluster */
 
 // long-tap action on hold, short-tap action on all interrupts
@@ -209,6 +216,8 @@ ZMK_MACRO(hyper,
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
 #define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
+#define HYPER_TAB &mt LC(LS(LA(LGUI))) TAB
+
 /* Keymap */
 
 /* ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS */
@@ -223,7 +232,7 @@ ZMK_LAYER(base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───────╮ ╭────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     XXX           &kp Z         &kp X         &kp C         &kp V         &kp B         &kp C_MUTE XXX     &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     XXX
 //├─────────────┼─────────────┼─────────────┴─────────────┼─────────────┼─────────────┼───────┤ ├────────┼─────────────┼─────────────┼─────────────┴───────────────────────────┼─────────────┤
-                                XXX           XXX           XXX           &lt NUM SPACE  &kp TAB  &kp ENTER &lt FN BSPC      XXX           XXX           XXX
+                                XXX           XXX           XXX           &lt NUM SPACE  HYPER_TAB  &kp ENTER &lt FN BSPC      XXX           XXX           XXX
 //                            ╰─────────────┴─────────────┴─────────────┴─────────────┴───────╯ ╰────────┴─────────────┴─────────────┴─────────────┴─────────────╯
 , &inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN
 )
